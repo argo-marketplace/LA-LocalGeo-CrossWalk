@@ -42,10 +42,12 @@ Municipal Court Districts
 Neighborhood Tabulation Areas
 Police Precincts
 PUMA
+Retail Water Districts
 School Districts
 State Assembly Districts
 State Senate Districts
 U.S. Congressional Districts
+Wholesale water districts (member agencies of Metropolitan Water District)
 
 ## How was this done?
 
