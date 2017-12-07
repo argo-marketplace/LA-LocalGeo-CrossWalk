@@ -49,9 +49,7 @@ State Senate Districts
 U.S. Congressional Districts
 Wholesale water districts (member agencies of Metropolitan Water District)
 
-## How was this done?
-
-First need to do the work! See below for some hopefully useful resources in tackling that:
+## How will we get this done?
 
 - The SCAG GIS Services should provide the most comprehensive inventory of boundaries: http://gisdata.scag.ca.gov/Pages/GIS-Library.aspx
 
