@@ -27,27 +27,27 @@ This dataset could help answer questions like this more easily while also reduci
 
 This file links up the following geographies in a single tabulated file (CURRENTLY ASPIRATIONAL):
 
-City boundaries
-Census Blocks 2010
-Census Tracts 2010
-City Council Districts
-Community Districts
-County Supervisorial Seats
-Fire Battalions (MAY NOT BE PERTINENT IN LA)
-Fire Companies (MAY NOT BE PERTINENT IN LA)
-Fire Divisions (MAY NOT BE PERTINENT IN LA)
-Health Area
-Health Center
-Municipal Court Districts
-Neighborhood Tabulation Areas
-Police Precincts
-PUMA
-Retail Water Districts
-School Districts
-State Assembly Districts
-State Senate Districts
-U.S. Congressional Districts
-Wholesale water districts (member agencies of Metropolitan Water District)
+- City boundaries
+- Census Blocks 2010
+- Census Tracts 2010
+- City Council Districts
+- Community Districts
+- County Supervisorial Seats
+- Fire Battalions (MAY NOT BE PERTINENT IN LA)
+- Fire Companies (MAY NOT BE PERTINENT IN LA)
+- Fire Divisions (MAY NOT BE PERTINENT IN LA)
+- Health Area
+- Health Center
+- Municipal Court Districts
+- Neighborhood Tabulation Areas
+- Police Precincts
+- PUMA
+- Retail Water Districts
+- School Districts
+- State Assembly Districts
+- State Senate Districts
+- U.S. Congressional Districts
+- Wholesale water districts (member agencies of Metropolitan Water District)
 
 ## How will we get this done?
 
