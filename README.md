@@ -23,9 +23,9 @@ This dataset could help answer questions like this more easily while also reduci
     AND
     How many Health Centers are in this area?
 
-## What is this?
+## What is LA-LocalGeo-Crosswalk?
 
-This file links up the following geographies in a single tabulated file (CURRENTLY ASPIRATIONAL):
+The objective of this project is to create a single GIS file that  links up the following geographies. The streth goal is to then create an API that allows anyone to query some point in LA County and retrieve all the local geographies that the point falls in. Example any point in LA county can belong to
 
 - City boundaries
 - Census Blocks 2010
@@ -33,11 +33,8 @@ This file links up the following geographies in a single tabulated file (CURRENT
 - City Council Districts
 - Community Districts
 - County Supervisorial Seats
-- Fire Battalions (MAY NOT BE PERTINENT IN LA)
-- Fire Companies (MAY NOT BE PERTINENT IN LA)
-- Fire Divisions (MAY NOT BE PERTINENT IN LA)
+- Fire stations
 - Health Area
-- Health Center
 - Municipal Court Districts
 - Neighborhood Tabulation Areas
 - Police Precincts
@@ -53,12 +50,13 @@ This file links up the following geographies in a single tabulated file (CURRENT
 
 - The SCAG GIS Services should provide the most comprehensive inventory of boundaries: http://gisdata.scag.ca.gov/Pages/GIS-Library.aspx
 
-- I'd also recommend looking into the various city-specific and LA county open data portals inventoried at the LACounts.org website. 
+- City-specific and LA county open data portals inventoried at the http://www.LACounts.org website. 
 
-- See the LA County LAFCO SB 272 inventory for some umwelt on how these sorts of boundaries are currently tracked: http://www.lalafco.org/Forms/Public%20Records/Enterprise%20System%20Catalog.pdf 
+- LA County LAFCO SB 272 inventory for context on how these sorts of boundaries are currently tracked: http://www.lalafco.org/Forms/Public%20Records/Enterprise%20System%20Catalog.pdf 
 
-
-ARGO team lead: Varun Adibhatla ( varun@argolabs.org ) 
+## How can I ask questions
+- Open an Issue on Github
+- Reach out to ARGO team lead: Varun Adibhatla ( varun@argolabs.org )
 
 
 
