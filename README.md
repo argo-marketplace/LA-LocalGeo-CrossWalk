@@ -48,11 +48,9 @@ The objective of this project is to create a single GIS file that  links up the 
 
 ## How will we get this done?
 
+- LA County GIS portal https://egis3.lacounty.gov/dataportal/data-catalog/
+
 - The SCAG GIS Services should provide the most comprehensive inventory of boundaries: http://gisdata.scag.ca.gov/Pages/GIS-Library.aspx
-
-- City-specific and LA county open data portals inventoried at the http://www.LACounts.org website. 
-
-- LA County LAFCO SB 272 inventory for context on how these sorts of boundaries are currently tracked: http://www.lalafco.org/Forms/Public%20Records/Enterprise%20System%20Catalog.pdf 
 
 ## How can I ask questions
 - Open an Issue on Github
