@@ -6,6 +6,7 @@ A preliminary timeline for the project is shown below:
 | Original Timeline | Deliverable |
 | ------------- | ------------- |
 | Week of 12/22/17 | Kickoff meeting |
+| Week of 12/29/17 | [List of local geographies (LA County vs. NYC)](https://docs.google.com/spreadsheets/d/1knENEZA57BtFOr489FJA3yA8folo-5lYsNi-qiRsR74/edit#gid=0)<br>[Intersection demo](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/blob/master/Week1_deliverable.ipynb) |
 | ...| ... |
 | 1/X/18 | Launch! |
 
@@ -14,11 +15,11 @@ A preliminary timeline for the project is shown below:
 This dataset could help answer questions like this more easily while also reducing the overall friction to integrate data from disparate domains.
 
     How many and which Census Tracts are located in LAUSD District X?
-    AND 
+    AND
     Which Fire District is serviced by this School District?
-    AND 
+    AND
     Which City Council District is this School District in?
-    AND 
+    AND
     Which Congressional District is it in?
     AND
     How many Health Centers are in this area?
@@ -55,6 +56,3 @@ The objective of this project is to create a single GIS file that  links up the 
 ## How can I ask questions
 - Open an Issue on Github
 - Reach out to ARGO team lead: Varun Adibhatla ( varun@argolabs.org )
-
-
-
