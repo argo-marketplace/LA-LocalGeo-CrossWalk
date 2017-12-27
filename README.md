@@ -49,9 +49,9 @@ The objective of this project is to create a single GIS file that  links up the 
 
 ## How will we get this done?
 
-- LA County GIS portal https://egis3.lacounty.gov/dataportal/data-catalog/
+- [LA County GIS portal](https://egis3.lacounty.gov/dataportal/data-catalog/)
 
-- The SCAG GIS Services should provide the most comprehensive inventory of boundaries: http://gisdata.scag.ca.gov/Pages/GIS-Library.aspx
+- [The SCAG GIS Services](http://gisdata.scag.ca.gov/Pages/GIS-Library.aspx) should provide the most comprehensive inventory of boundaries.
 
 ## How can I ask questions
 - Open an Issue on Github
