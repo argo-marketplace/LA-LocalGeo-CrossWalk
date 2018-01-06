@@ -1,4 +1,4 @@
-# Note for Week 2
+# Note for Week2_deliverable.ipynb
 We inspected 20 geometries in total.
 Among these 20 datasets, files 'Registrar Recorder Precincts' and 'Census Blocks' are
 geo-crosswalk type of datasets.
