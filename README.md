@@ -8,6 +8,7 @@ A preliminary timeline for the project is shown below:
 | Week of 12/22/17 | Kickoff meeting |
 | Week of 12/29/17 | [List of local geographies (LA County vs. NYC)](https://docs.google.com/spreadsheets/d/1knENEZA57BtFOr489FJA3yA8folo-5lYsNi-qiRsR74/edit#gid=0)<br>[Intersection demo](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/blob/master/Week1_deliverable.ipynb) |
 | Week of 01/05/18 | [Intersection notebook](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/blob/master/Week2/Week2_deliverable.ipynb)<br>[Geo-crosswalk csv file](https://drive.google.com/drive/u/0/folders/1S2W_ffWTB8f-mwz96WH0E45KUPERU7HZ)
+| Week of 01/12/17 | [Performace comparison between spatial_overlays and r-tree.](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/issues/8)<br>[Compare results of geopandas with Arcgis and Qgis.](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/issues/13)<br>[Create an API](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/issues/10)
 | ...| ... |
 | 1/X/18 | Launch! |
 
