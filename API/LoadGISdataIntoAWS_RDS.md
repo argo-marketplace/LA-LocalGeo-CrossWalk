@@ -15,12 +15,12 @@ Type this into the psql prompt:
     CREATE EXTENSION postgis;
     CREATE EXTENSION postgis_topology;
 
-#### Import Data using `shp2pgsql`
+#### 4. Import Data using `shp2pgsql`
 Have the shapefile `arcgis_intersections.shp` ready for use.
 
     shp2pgsql -I -W "latin1" -s 4326 -d -g the_geom arcgis_intersections.shp db_argo |psql -U <master user name> -p <port> -h <DB instance endpoint> db_argo
 
-#### Test
+#### 5. Test
 Query the geometry of the first entry
 
     SELECT ST_AsGeoJson(the_geom) from db_argo LIMIT 1;
