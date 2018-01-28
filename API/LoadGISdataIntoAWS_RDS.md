@@ -30,3 +30,11 @@ Query first three entries
     SELECT * from db_argo LIMIT 3;
 
 ![test](figure/test.png)    
+
+Query where a certain point falls into
+
+    SELECT *
+    FROM db_argo
+    WHERE ST_Contains (db_argo.the_geom, ST_GeomFromText('Point(-118.159953387143 33.8719625444075)', 4326))=TRUE;
+
+![test](figure/point.png)
