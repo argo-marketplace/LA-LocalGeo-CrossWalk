@@ -39,7 +39,7 @@ This dataset could help answer questions like this more easily while also reduci
 ## How can we use this Geo-CrossWalk?
 - [Download the file (.csv format)](https://drive.google.com/file/d/1yaRMp1azgGNlv1EKMMUXXEALfReRfz_7/view?usp=sharing)
 - [Download the file (Shapefile format)](https://drive.google.com/file/d/1c3Ja2jkVFN8kRq5ANPyTovyZZlwEBrd5/view?usp=sharing)
-- [Query the API]()
+- [Query with this APP](https://calm-stream-52725.herokuapp.com/)
 
 ## Where are the original data coming from?
 - [LA County GIS portal](https://egis3.lacounty.gov/dataportal/data-catalog/).
@@ -49,10 +49,8 @@ This dataset could help answer questions like this more easily while also reduci
 #### Produce the GIS file:
 - For now, [using ArcGIS](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/issues/13) is the most robust and direct approach. See how we [build the geo-crosswalk using ArcGIS](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/blob/master/CreateGeocrosswalkbyArcgis.md).
 - Here provides an alternative solution [using geopandas](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/blob/master/The%20intersection%20utilized%20GeoPandas.ipynb).
-#### Create the API:
-- [Load GIS data into the AWS RDS](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/blob/master/API/LoadGISdataIntoAWS_RDS.md).
-- Work ongoing...
-
+#### Create the APP:
+- [Using Heroku, Node.js/Express, AWS RDS, PostGIS/PostgreSQL](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/blob/master/APP/README.md).
 
 ## For more references:
 See [here for an example in NYC from @vr00n](https://github.com/vr00n/NYC-LocalGeo-CrossWalk)
