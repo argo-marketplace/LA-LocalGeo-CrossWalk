@@ -70,7 +70,7 @@ npm is a manager of javascript libraries. Express is employed to construct the f
 
 pg-promise and bluebird are employed for easy querying the PostgreSQL Database on AWS RDS.
 
-__Notice__: When installing these libraries above, make sure having `--save` in the code, so that this libraries can be automatically recorded in the `package.json`. Like this
+__Notice__: When installing these libraries above, make sure having `--save` in the code, so that this library can be automatically recorded in the `package.json`. Like this
 
     npm install express --save
 
