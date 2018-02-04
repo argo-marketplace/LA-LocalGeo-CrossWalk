@@ -1,0 +1,22 @@
+{
+  "name": "geocrosswalk",
+  "version": "1.0.0",
+  "description": "geo link of la county",
+  "main": "app.js",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "dbgeo": "^1.1.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "pg": "^7.4.1",
+    "pg-promise": "^7.4.1",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo",
+    "start": "node app.js"
+  },
+  "author": "ARGO",
+  "license": "ISC"
+}
