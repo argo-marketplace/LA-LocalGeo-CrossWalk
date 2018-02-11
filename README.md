@@ -36,10 +36,11 @@ This dataset could help answer questions like this more easily while also reduci
     AND
     How many Health Centers are in this area?
 
-## How can we use this Geo-CrossWalk?
+## How can I use this Geo-CrossWalk?
 - [Download the file (.csv format)](https://drive.google.com/file/d/1yaRMp1azgGNlv1EKMMUXXEALfReRfz_7/view?usp=sharing)
 - [Download the file (Shapefile format)](https://drive.google.com/file/d/1c3Ja2jkVFN8kRq5ANPyTovyZZlwEBrd5/view?usp=sharing)
-- [Query with this APP](https://calm-stream-52725.herokuapp.com/)
+- [Query in UI](https://calm-stream-52725.herokuapp.com/)
+- [Query with API](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/blob/master/AWS_API_Gateway/API_user_instruction.ipynb)
 
 ## Where are the original data coming from?
 - [LA County GIS portal](https://egis3.lacounty.gov/dataportal/data-catalog/).
@@ -47,10 +48,12 @@ This dataset could help answer questions like this more easily while also reduci
 
 ## How we got this done?
 #### Produce the GIS file:
-- For now, [using ArcGIS](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/issues/13) is the most robust and direct approach. See how we [build the geo-crosswalk using ArcGIS](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/blob/master/CreateGeocrosswalkbyArcgis.md).
+- For now, [using ArcGIS](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/issues/13) is the most robust and direct approach. See how we [build the geo-crosswalk using ArcGIS](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/blob/master/ProduceGISdata/CreateGeocrosswalkbyArcgis.md).
 - Here provides an alternative solution [using geopandas](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/blob/master/The%20intersection%20utilized%20GeoPandas.ipynb).
 #### Create the APP:
 - [Using Heroku, Node.js/Express, AWS RDS, PostGIS/PostgreSQL](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/blob/master/APP/README.md).
+#### Create the API:
+- [Using AWS API Gateway, Lambda, RDS](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/blob/master/AWS_API_Gateway/README.md)
 
 ## For more references:
 See [here for an example in NYC from @vr00n](https://github.com/vr00n/NYC-LocalGeo-CrossWalk)
