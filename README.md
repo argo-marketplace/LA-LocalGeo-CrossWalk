@@ -21,7 +21,7 @@ A single GIS file that links up the following geographies. Utilizing the API we 
 - Public Use Microdata Areas (PUMA)
 - Health Districts
 
-This Geo-CrossWalk shares the same idea as the [Relationship Files by US Census Bureau](https://www.census.gov/geo/maps-data/data/relationship.html). The difference is that we also want to build an API for instantly "query and answer" on this relationship file.
+This Geo-CrossWalk shares the same idea as the [Relationship Files by US Census Bureau](https://www.census.gov/geo/maps-data/data/relationship.html). The difference is that we also built an API for instantly "query and answer" on this relationship file.
 
 ## Why do we need this?
 This dataset could help answer questions like this more easily while also reducing the overall friction to integrate data from disparate domains.
