@@ -39,8 +39,8 @@ This dataset could help answer questions like this more easily while also reduci
 ## How can I use this Geo-CrossWalk?
 - [Download the file (.csv format)](https://drive.google.com/file/d/1yaRMp1azgGNlv1EKMMUXXEALfReRfz_7/view?usp=sharing)
 - [Download the file (Shapefile format)](https://drive.google.com/file/d/1c3Ja2jkVFN8kRq5ANPyTovyZZlwEBrd5/view?usp=sharing)
-- [Query in UI](https://calm-stream-52725.herokuapp.com/)
-- [Query with API](https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/blob/master/AWS_API_Gateway/API_user_instruction.ipynb)
+- [Query in UI](https://geocrosswalk.herokuapp.com/)
+- [Query with API](https://geocrosswalk.herokuapp.com/api)
 
 ## Where are the original data coming from?
 - [LA County GIS portal](https://egis3.lacounty.gov/dataportal/data-catalog/).
