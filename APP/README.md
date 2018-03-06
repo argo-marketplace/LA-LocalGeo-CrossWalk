@@ -37,6 +37,7 @@ Type this into the psql prompt:
     CREATE EXTENSION postgis_topology;
 
 #### 4. Import Data using `shp2pgsql`
+This goes on command prompt and not the psql prompt.
 Have the shapefile `arcgis_intersections.shp` ready for use. In the directory of this shapefile, type
 
     shp2pgsql -I -W "latin1" -s 4326 -d -g the_geom arcgis_intersections.shp db_argo |psql -U <master user name> -p <port> -h <DB instance endpoint> db_argo
