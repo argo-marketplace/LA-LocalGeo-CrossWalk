@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LA County Geo-CrossWalk</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="/app.css">
+
+  </head>
+  <body>
+
+
+    <!--headers-->
+    <div>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <a href="https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+          <h1 class="display-4">Geo-Cross-Walk</h1>
+          <p class="lead">A Geo-Cross-Walk is a single file that provides a mapping between different boundaries in a given area. For example, given the latitude and longitude in LA County, this file provides its corresponding local city, legislative district, police precinct, census district and more.</p>
+          <!-- <a href="https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk" class="btn btn-outline btn-lg" onclick="_gaq.push(['_trackEvent', 'exit', 'header', 'GitHub']);"><span class="fa fa-github"></span> View on GitHub</a> -->
+        </div>
+      </div>
+    </div>
+
+    <!--nav bars    -->
+    <div class="container" id="navarea">
+      <nav class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="tab">
+          <a class="nav-link" href="/">Address Search</a>
+        </li>
+        <li class="nav-item" role="tab">
+          <a class="nav-link active" href="/b">lon/lat Search</a>
+        </li>
+        <li class="nav-item" role="tab">
+          <a class="nav-link" href="/api">API</a>
+        </li>
+      </nav>
+    </div><br><br>
+    
+    
+    <!--search area-->
+    <div class="container">
+      <form action="/results" method="GET"> 
+        <div class="input-group mb-3">
+          <select class="form-control form-control-sm" name="place">
+            <option value="la" required>LA County</option>
+            <option value="nyc" required>New York City</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>Longitude</label>
+          <input type="text" name="lonSearch" class="form-control" max='17' placeholder="e.g. -118.159953387143" required>
+        </div>
+        
+        <div class="form-group">
+          <label>Latitude</label>
+          <input type="text" name="latSearch" class="form-control" max='16' placeholder="e.g. 33.8719625444075" required>
+        </div>
+        
+        <div id="searchbar">
+          <button type="submit" class="btn btn-light">Search</button>
+        </div>
+        <hr />
+      </form> 
+    </div>

@@ -1,52 +1,109 @@
 var express = require("express");
 var app = express();
-var request = require('request');
-var pg = require("pg");
-var dbgeo = require("dbgeo");
+const fetch = require('node-fetch');
+const Bluebird = require('bluebird');
+fetch.Promise = Bluebird;
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res){
-    res.render("home");
+    res.render("homea");
 });
 
-//demo request to api
-// app.get("/results", function(req, res) {
-//     var query = 'Point(' + req.query.lonSearch + ' ' + req.query.latSearch + ')';
-//     var url = 'http://www.omdbapi.com/?i=tt3896198&apikey=thewdb' + query;
-//     request(url, function(error, response, body){
-//         if(!error && response.statusCode == 200){
-//             var parsedData = JSON.parse(body);
-//             var long = req.params.lon;
-//             var lati = req.params.lat;
-//             //res.send(parsedData['Title']);
-//             res.render("geocrosswalk", {longVar: long, latiVar: lati, data: parsedData});
-//         }
-//     })
-// })
+app.get("/b", function(req, res){
+    res.render("homeb");
+});
 
+// geocode first, query RDS second
+app.get("/addr-results", function(req, res){
+    
+    var queryaddr = req.query.physaddress;
+    var replaced = queryaddr.split(' ').join('+');
+    var apiurl = "https://maps.googleapis.com/maps/api/geocode/json?address="+replaced+"&key=AIzaSyCzl4xYox3YGA3g8u553Im6rP784cTHXBo";
+
+    fetch(apiurl).then(function(response) {
+      return response.json();
+    }).then(function(data) {
+        
+      var backlon = data.results[0].geometry.location.lng;
+      var backlat = data.results[0].geometry.location.lat;
+      var fulladdr = data.results[0].formatted_address;
+    
+      var queryplace = req.query.place;
+      var querypoint = 'Point(' + backlon + ' ' + backlat + ')';
+      const promise = require('bluebird'); // or any other Promise/A+ compatible library;
+      const initOptions = {
+        promiseLib: promise // overriding the default (ES6 Promise);
+      };
+      const pgp = require('pg-promise')(initOptions);
+      const connection = "postgres://gbhardwaj:argolabs@geocrosswalk.c8idj0wb3ddk.us-east-1.rds.amazonaws.com:5432/crosswalk";
+      const db = pgp(connection);
+      console.log("Start Query");
+      if (queryplace == "nyc") {
+        var querytext = "SELECT * FROM crosswalk WHERE ST_Contains (crosswalk.the_geom, ST_GeomFromText('" + querypoint + "', 4326))=TRUE;";
+      } else {
+        var querytext = "SELECT * FROM latable WHERE ST_Contains (latable.the_geom, ST_GeomFromText('" + querypoint + "', 4326))=TRUE;";
+      };
+    
+      console.log(querytext);
+      db.any(querytext, [true])
+        .then(data => {
+            console.log('DATA:', data); // print data;
+            if (queryplace == "nyc") {
+                res.render("geocrosswalkNYCa", {fulladdr: fulladdr, data: data});
+            } else {
+                res.render("geocrosswalkLAa", {fulladdr: fulladdr, data: data});
+            }
+            
+        })
+        .catch(error => {
+            console.log('ERROR:', error); // print the error;
+        })
+        .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool    
+        
+        
+
+    }).catch(function() {
+      console.log("Booo");
+    });
+
+
+});
 
 // query from AWS RDS directly
 app.get("/results", function(req, res){
+    
+    var queryplace = req.query.place;
+    console.log(queryplace);
     var querypoint = 'Point(' + req.query.lonSearch + ' ' + req.query.latSearch + ')';
-    // var querypoint = 'Point(-118.159953387143 33.8719625444075)';
     const promise = require('bluebird'); // or any other Promise/A+ compatible library;
     const initOptions = {
         promiseLib: promise // overriding the default (ES6 Promise);
     };
     const pgp = require('pg-promise')(initOptions);
-    const connection = "postgres://username:password@rdsEndPoint:5432/DatabaseName";
+    const connection = "postgres://gbhardwaj:argolabs@geocrosswalk.c8idj0wb3ddk.us-east-1.rds.amazonaws.com:5432/crosswalk";
     const db = pgp(connection);
     console.log("Start Query");
-    var querytext = "SELECT * FROM db_argo WHERE ST_Contains (db_argo.the_geom, ST_GeomFromText('" + querypoint + "', 4326))=TRUE;";
+    if (queryplace == "nyc") {
+        var querytext = "SELECT * FROM crosswalk WHERE ST_Contains (crosswalk.the_geom, ST_GeomFromText('" + querypoint + "', 4326))=TRUE;";
+    } else {
+        var querytext = "SELECT * FROM latable WHERE ST_Contains (latable.the_geom, ST_GeomFromText('" + querypoint + "', 4326))=TRUE;";
+    };
+    
     console.log(querytext);
     db.any(querytext, [true])
         .then(data => {
             console.log('DATA:', data); // print data;
             var long = req.query.lonSearch;
             var lati = req.query.latSearch;
-            res.render("geocrosswalk", {longVar: long, latiVar: lati, data: data});
+            
+            if (queryplace == "nyc") {
+                res.render("geocrosswalkNYCb", {longVar: long, latiVar: lati, data: data});
+            } else {
+                res.render("geocrosswalkLAb", {longVar: long, latiVar: lati, data: data});
+            }
+            
         })
         .catch(error => {
             console.log('ERROR:', error); // print the error;
@@ -54,7 +111,10 @@ app.get("/results", function(req, res){
         .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
     });
 
-
+// get api page
+app.get("/api", function(req, res) {
+    res.render("apidoc");
+});
 
 //return a message when url is wrong
 //should put in the end, as order sensitive in routing
@@ -65,3 +125,4 @@ app.get("*", function(req, res) {
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("server started!");
 });
+

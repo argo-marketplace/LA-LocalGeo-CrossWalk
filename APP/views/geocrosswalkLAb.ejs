@@ -1,0 +1,117 @@
+<% include partials/headerb %>
+
+<div class="container-fluid">
+  <h3 id="searchterm">Results for (<%= longVar %>, <%= latiVar %>) </h3>
+
+  <% try { %>
+    <% data[0]['objectid']; %>
+  <% } catch (e) { %>
+    <%= console.log(e.name); %>
+    <% if(e.name == 'TypeError'){ %>
+      <% return "Invalid entry! Make sure it's in LA County and precise enough :)"; %>
+    <% } else { %>
+      <%= console.log(e.name) %>
+    <% } %>
+  <% } %>
+</div>
+
+<div class="container">
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Geometry</th>
+      <th scope="col">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <th scope="row">Law Enforcement Reporting Districts</th>
+      <td><%= data[0]['rd'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Law Enforcement Reporting Districts Names</th>
+      <td><%= data[0]['name'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">La County Communities</th>
+      <td><%= data[0]['name_1'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Registrar Recorder Precincts</th>
+      <td><%= data[0]['precinct'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Congressional Districts</th>
+      <td><%= Math.floor(data[0]['dist_cong']) %></td>
+    </tr>
+    <tr>
+      <th scope="row">State Senate Districts</th>
+      <td><%= Math.floor(data[0]['dist_stsen']) %></td>
+    </tr>
+    <tr>
+      <th scope="row">State Assembly Districts</th>
+      <td><%= Math.floor(data[0]['dist_stass']) %></td>
+    </tr>
+    <tr>
+      <th scope="row">2011 Supervisorial Districts</th>
+      <td><%= Math.floor(data[0]['dist_sup']) %></td>
+    </tr>
+    <tr>
+      <th scope="row">Area Codes</th>
+      <td><%= Math.floor(data[0]['area_code']) %></td>
+    </tr>
+    <tr>
+      <th scope="row">Area Names</th>
+      <td><%= data[0]['area_name'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Registrar Recorder Precincts Names</th>
+      <td><%= data[0]['prc_name'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">2010 Census Tracts</th>
+      <td><%= data[0]['ct10'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">2010 Block Groups</th>
+      <td><%= data[0]['bg10'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">2010 Census Blocks</th>
+      <td><%= data[0]['cb10'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Federal Information Processing Standard Numbers</th>
+      <td><%= data[0]['la_fip10'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">City Name</th>
+      <td><%= data[0]['city'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Postal Code</th>
+      <td><%= data[0]['zcta10'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Public Use Microdata Areas (PUMA)</th>
+      <td><%= data[0]['puma10'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Health Districts</th>
+      <td><%= data[0]['hd_2012'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Health Districts Names</th>
+      <td><%= data[0]['hd_name'] %></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+
+
+<% include partials/footer %>

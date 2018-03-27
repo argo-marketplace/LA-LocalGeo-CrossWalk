@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LA County Geo-CrossWalk</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="/app.css">
+
+  </head>
+  <body>
+
+
+    <!--headers-->
+    <div>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <a href="https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+          <h1 class="display-4">Geo-Cross-Walk</h1>
+          <p class="lead">A Geo-Cross-Walk is a single file that provides a mapping between different boundaries in a given area. For example, given the latitude and longitude in LA County, this file provides its corresponding local city, legislative district, police precinct, census district and more.</p>
+          <!-- <a href="https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk" class="btn btn-outline btn-lg" onclick="_gaq.push(['_trackEvent', 'exit', 'header', 'GitHub']);"><span class="fa fa-github"></span> View on GitHub</a> -->
+        </div>
+      </div>
+    </div>
+
+    <!--nav bars    -->
+    <div class="container" id="navarea">
+      <nav class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="tab">
+          <a class="nav-link" href="/">Address Search</a>
+        </li>
+        <li class="nav-item" role="tab">
+          <a class="nav-link" href="/b">lon/lat Search</a>
+        </li>
+        <li class="nav-item" role="tab">
+          <a class="nav-link active" href="/api">API</a>
+        </li>
+      </nav>
+    </div><br><br>
+
+    <div class="container">
+      <h2 class="container" align="center">API Documentation </h2><br>
+      <h5>API query format</h5>
+      <p>
+      There are three parameters of your choice here. You can choose to query data of LA County as <strong>la</strong> or New York City as <strong>nyc</strong>.
+      And you need to input the longitude and latitude.
+      To query this API, the basic formats are as follow: <br>
+
+      <!--api address-->
+      <div>
+        <figure class="highlight"><pre><code>
+          <span class="c">#LA County</span>
+          <span class="c">https://vrcz3sgoog.execute-api.us-east-1.amazonaws.com/beta/la?long=-118.408518&lati=33.945421</span><br><br>
+          <span class="c">#New York City</span>
+          <span class="c">https://vrcz3sgoog.execute-api.us-east-1.amazonaws.com/beta/nyc?long=-73.987493&lati=40.693258</span>          
+        </code></pre></figure>
+      </div>
+    
+      To find examples with basic API use, here is a <a href="https://github.com/argo-marketplace/LA-LocalGeo-CrossWalk/blob/master/AWS_API_Gateway/API_user_instruction.ipynb">simple IPython notebook</a> that will walk you through the process of using the API.
+
+      Now that you know how to use an API, lets jump skip to the development process. <br><br><br>
+
+      <h5>Steps to create an API using AWS API Gateway and Lambda</h5>
+      API Gateway takes in http calls and trigger the Lambda function. Lambda function takes in the request data (lon/lat in json format) from the API Gateway, queries the Database, and returns the result back to API Gateway.
+      <ul style="list-style-type:disc">
+        <li>Choose Runtime. Runtime is the runtime environment for the Lambda function you are uploading. Some major runtime supported by Lambda function are Node.js, Python, Java, Go, and C#. Here we use Node.js</li>
+        <li>Choose Role. Role defines the permissions this Lambda function has regarding all AWS resources.</li>
+        <li>Upload the .zip file containing the Lambda function you've written and its related packages.</li>
+        <li>Add API Gateway as trigger.</li><br>
+      </ul>
+
+        For further assistance, please visit the<a href="https://github.com/lingyielia/apigateway-lambda-rds-postgis/blob/master/README.md"> AWS deployment document </a>.
+
+
+
+      Once you've deployed the API, go ahead and test it and feel good about yourself!!
+      </p>
+    </div>
+    
+<% include partials/footer %>

@@ -1,0 +1,141 @@
+<% include partials/headera %>
+
+<div class="container-fluid">
+  <h3 id="searchterm">Results for (<%= fulladdr %>) </h3>
+
+  <% try { %>
+    <% data[0]['objectid']; %>
+  <% } catch (e) { %>
+    <%= console.log(e.name); %>
+    <% if(e.name == 'TypeError'){ %>
+      <% return "Invalid entry! Make sure it's in New York City and precise enough :)"; %>
+    <% } else { %>
+      <%= console.log(e.name) %>
+    <% } %>
+  <% } %>
+</div>
+
+<div class="container">
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Geometry</th>
+      <th scope="col">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <th scope="row">gid</th>
+      <td><%= data[0]['gid'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Fire Companies</th>
+      <td><%= data[0]['firecotype'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Census Blocks 2010</th>
+      <td><%= data[0]['cb2010'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Borough Codes</th>
+      <td><%= data[0]['borocode'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Borough Names</th>
+      <td><%= data[0]['boroname'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Census Tracts 2010</th>
+      <td><%= data[0]['ct2010'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">2010 Bourugh + 2010 Census Tract + 2010 Census Block</th>
+      <td><%= data[0]['bctcb2010'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">2010 Borough + 2010 Census Tract</th>
+      <td><%= data[0]['boroct2010'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Community Development Block Grant Eligibility</th>
+      <td><%= data[0]['cdeligibil'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Neighborhood Tabulation Areas Codes</th>
+      <td><%= data[0]['ntacode'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Neighborhood Tabulation Areas Name</th>
+      <td><%= data[0]['ntaname'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">PUMA</th>
+      <td><%= data[0]['puma'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">cartodb_id</th>
+      <td><%= data[0]['cartodb_id'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Fire Companies Numbers</th>
+      <td><%= data[0]['fireconum'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Fire Battalions</th>
+      <td><%= data[0]['firebn'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Fire Divisions</th>
+      <td><%= data[0]['firediv'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Health Areas</th>
+      <td><%= data[0]['healtharea'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Health Centers</th>
+      <td><%= data[0]['hcentdist'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Police Precincts</th>
+      <td><%= data[0]['precinct'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">School Districts</th>
+      <td><%= data[0]['schooldist'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">State Senate Districts</th>
+      <td><%= data[0]['stsendist'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">U.S. Congressional Districts</th>
+      <td><%= data[0]['congdist'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">State Assembly Districts</th>
+      <td><%= data[0]['assemdist'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Community Districts</th>
+      <td><%= data[0]['coundist'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Borough + Community District</th>
+      <td><%= data[0]['borocd'] %></td>
+    </tr>
+    <tr>
+      <th scope="row">Election Districts</th>
+      <td><%= data[0]['electdist'] %></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+
+
+<% include partials/footer %>

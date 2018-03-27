@@ -1,7 +1,7 @@
-<% include partials/header %>
+<% include partials/headera %>
 
 <div class="container-fluid">
-  <h3 id="searchterm">Results for (<%= longVar %>, <%= latiVar %>) </h3>
+  <h3 id="searchterm">Results for (<%= fulladdr %>) </h3>
 
   <% try { %>
     <% data[0]['objectid']; %>
@@ -24,10 +24,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">objectid</th>
-      <td><%= data[0]['objectid'] %></td>
-    </tr>
+
     <tr>
       <th scope="row">Law Enforcement Reporting Districts</th>
       <td><%= data[0]['rd'] %></td>
@@ -46,23 +43,23 @@
     </tr>
     <tr>
       <th scope="row">Congressional Districts</th>
-      <td><%= data[0]['dist_cong'] %></td>
+      <td><%= Math.floor(data[0]['dist_cong']) %></td>
     </tr>
     <tr>
       <th scope="row">State Senate Districts</th>
-      <td><%= data[0]['dist_stsen'] %></td>
+      <td><%= Math.floor(data[0]['dist_stsen']) %></td>
     </tr>
     <tr>
       <th scope="row">State Assembly Districts</th>
-      <td><%= data[0]['dist_stass'] %></td>
+      <td><%= Math.floor(data[0]['dist_stass']) %></td>
     </tr>
     <tr>
       <th scope="row">2011 Supervisorial Districts</th>
-      <td><%= data[0]['dist_sup'] %></td>
+      <td><%= Math.floor(data[0]['dist_sup']) %></td>
     </tr>
     <tr>
       <th scope="row">Area Codes</th>
-      <td><%= data[0]['area_code'] %></td>
+      <td><%= Math.floor(data[0]['area_code']) %></td>
     </tr>
     <tr>
       <th scope="row">Area Names</th>
